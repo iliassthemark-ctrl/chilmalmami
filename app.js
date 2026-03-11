@@ -70,6 +70,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ─── Event Card Navigation ───
+document.querySelectorAll('[data-event-target]').forEach(card => {
+    const navigateToEvent = () => {
+        window.location.href = card.dataset.eventTarget;
+    };
+
+    card.addEventListener('click', navigateToEvent);
+    card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            navigateToEvent();
+        }
+    });
+});
+
 // ─── Form Handling ───
 function handleSignup(form, type) {
     const emailInput = form.querySelector('input[type="email"]');

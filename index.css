@@ -304,8 +304,6 @@ input {
   font-size: 0.65rem;
   letter-spacing: 3px;
   color: var(--text-secondary);
-  margin-top: 200px;
-  margin-bottom: 48px;
   opacity: 0;
   animation: fadeInUp 0.8s var(--ease-out-expo) 0.8s both;
 }
@@ -351,13 +349,17 @@ input {
     text-align: center;
     padding: 0 24px;
     max-width: 900px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
 .hero-badge {
-    display: inline-flex;
+    display: inline;
     align-items: center;
-    gap: 8px;
-    padding: 8px 20px;
+    padding: 20px -20px;
+    gap: 10px;
     border-radius: 100px;
     background: rgba(255, 107, 53, 0.12);
     backdrop-filter: blur(10px);
@@ -367,9 +369,18 @@ input {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--golden-accent);
-    margin-bottom: 32px;
     animation: fadeInUp 0.8s var(--ease-out-expo) 0.2s both;
 }
+
+@media (max-width: 600px) {
+    
+   .hero-content {
+    margin-top: 120px;
+    gap: 3rem;
+}
+}
+
+
 
 /* ---------- COUNTDOWN ---------- */
 .countdown {
@@ -377,8 +388,6 @@ input {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: 10px;
-    margin-bottom: 50px;
     animation: fadeInUp 0.8s var(--ease-out-expo) 0.5s both;
 }
 
@@ -578,9 +587,7 @@ input {
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    animation: fadeInUp 0.8s var(--ease-out-expo) 1s both;
-    margin-top: 50px;
-    
+    animation: fadeInUp 0.8s var(--ease-out-expo) 1s both;    
 }
 
 .hero-scroll .scroll-line {
