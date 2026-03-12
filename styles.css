@@ -14,6 +14,9 @@
     --bg-surface:      #1a2540;   /* --dark-surface */
     --bg-elevated:     #1e2d4a;   /* --dark-elevated */
     --bg-glass:        rgba(255, 107, 53, 0.08);
+    --bg-kalwa:        var(--dark-surface);
+    --bg-fatih:        var(--dark-bg);
+    --bg-byad:         rgb(235, 217, 17); 
 
     --text:            #FFFFFF;
     --text-secondary:  rgba(255, 255, 255, 0.82);
@@ -288,7 +291,7 @@ img {
 
 /* ---------- Event Details Section ---------- */
 .event-details {
-    background: var(--bg);
+    background: var(--bg-kalwa);
     padding: 4rem 0;
 }
 
@@ -424,8 +427,8 @@ img {
 /* ---------- Event Info & Lineup ---------- */
 .event-info,
 .event-lineup {
-    background: var(--bg-surface);
-    border: var(--border-subtle);
+    background: var(--bg-fatih);
+    border: var(--bg-fatih);
     border-radius: 20px;
     padding: 2rem;
 }
@@ -588,6 +591,238 @@ img {
     color: var(--accent);
 }
 
+/* ========================================== */
+/* EVENTONE PAGE SPECIFIC STYLES */
+/* ========================================== */
+
+/* ---------- Event Details (eventone.html only) ---------- */
+.event-details-page {
+    background: var(--bg-kalwa);
+    padding: 4rem 0;
+}
+
+.event-details-page-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+}
+
+/* ---------- Event Info & Lineup (eventone.html only) ---------- */
+.event-info-page,
+.event-lineup-page {
+    background: var(--bg-fatih);
+    border: var(--bg-fatih);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.event-info-page .event-panel-title,
+.event-lineup-page .event-panel-title {
+    margin-bottom: 2rem;
+}
+
+.event-info-page .detail-item,
+.event-lineup-page .detail-item {
+    margin-bottom: 1.5rem;
+}
+
+.event-info-page .detail-item:last-child,
+.event-lineup-page .detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.event-info-page .detail-label,
+.event-lineup-page .detail-label {
+    font-size: 0.875rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+}
+
+.event-info-page .detail-value,
+.event-lineup-page .detail-value {
+    font-size: 1.1rem;
+}
+
+.event-info-page .detail-subvalue,
+.event-lineup-page .detail-subvalue {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.event-lineup-page .artist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-lineup-page .artist-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.event-lineup-page .artist-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.event-lineup-page .artist-meta {
+    font-size: 0.875rem;
+    opacity: 0.7;
+}
+
+.event-lineup-page .artist-role {
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.event-lineup-page .artist-role-muted {
+    opacity: 0.7;
+}
+
+/* ---------- Genre Marquee (eventone.html only) ---------- */
+.genre-marquee-page {
+    padding: 0px 0;
+    background: linear-gradient( var(--accent-warm));
+    border-top: 1px solid rgba(255, 107, 53, 0.45);
+    border-bottom: 1px solid var(--accent-warm);
+    overflow: hidden;
+}
+
+.genre-marquee-page .marquee-track-page {
+    display:flex;
+    gap: 40px;
+    animation: marquee-page 25s linear infinite;
+    width: max-content;
+}
+
+.genre-marquee-page .marquee-track-page span {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: var(--bg);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.genre-marquee-page .marquee-track-page span::after {
+    content: '◆';
+    font-size: 0.5rem;
+    color: var(--accent-warm);
+}
+
+@keyframes marquee-page {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ---------- Footer (eventone.html only) ---------- */
+.footer-page {
+    padding: 80px 0 40px;
+    border-top: var(--border-subtle);
+    background: var(--bg);
+}
+
+.footer-page .footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.footer-page .footer-center .navbar-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.footer-page .footer-center .navbar-logo img {
+    height: 64px;
+}
+
+.footer-page .footer-tagline {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+}
+
+.footer-page .footer-social-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.footer-page .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer-page .footer-socials a {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 107, 53, 0.24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    color: var(--text-secondary);
+}
+
+.footer-page .footer-socials a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: var(--glow-accent);
+    transform: translateY(-4px);
+}
+
+.footer-page .footer-socials a svg {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-page .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    border-top: var(--border-subtle);
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-page .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.footer-page .footer-bottom-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-page .footer-bottom-links a {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.footer-page .footer-bottom-links a:hover {
+    color: var(--accent);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
     .navbar-links {
@@ -634,6 +869,7 @@ img {
 
     .event-details {
         padding: 3rem 0;
+
     }
 
     .event-details-layout {
@@ -650,6 +886,26 @@ img {
         align-items: flex-start;
     }
 
+    /* Eventone Page Specific */
+    .event-details-page {
+        padding: 3rem 0;
+
+    }
+
+    .event-details-page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .event-info-page,
+    .event-lineup-page {
+        padding: 1.5rem;
+    }
+
+    .event-lineup-page .artist-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .gallery-slide {
         flex: 0 0 50%;
     }
@@ -660,6 +916,11 @@ img {
     }
 
     .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-page .footer-bottom {
         flex-direction: column;
         text-align: center;
     }
@@ -697,6 +958,18 @@ img {
         font-size: 1rem;
     }
 
+    /* Eventone Page Specific */
+    .event-info-page,
+    .event-lineup-page {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
+    .event-info-page .detail-value,
+    .event-lineup-page .detail-value {
+        font-size: 1rem;
+    }
+
     .gallery-slide {
         flex: 0 0 85%;
     }
@@ -722,5 +995,705 @@ img {
     .footer-bottom-links {
         flex-direction: column;
         gap: 12px;
+    }
+
+    .footer-page .footer-bottom-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* ============================================
+   RECORDS PAGE STYLES
+   ============================================ */
+
+/* ---------- Records Hero ---------- */
+.records-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.records-hero .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.records-hero .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.records-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(15, 23, 42, 0.7) 0%,
+        rgba(15, 23, 42, 0.4) 40%,
+        rgba(15, 23, 42, 0.8) 80%,
+        rgba(15, 23, 42, 1) 100%);
+    z-index: 1;
+}
+
+.records-hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 140px 24px 80px;
+}
+
+.records-hero__tag {
+    color: var(--accent);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.15em;
+}
+
+.records-hero__title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.records-hero__subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ---------- Records About ---------- */
+.records-about {
+    padding: 100px 0;
+    background: var(--bg);
+}
+
+.records-about__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.records-about__image {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+}
+
+.records-about__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out-expo);
+}
+
+.records-about__image:hover img {
+    transform: scale(1.04);
+}
+
+.records-about__text h2 {
+    margin-bottom: 24px;
+}
+
+.records-about__text p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.records-about__cta {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: var(--border-subtle);
+}
+
+.records-about__cta p {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+}
+
+.records-email-link {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--text);
+    transition: color var(--transition-fast);
+    display: inline-block;
+}
+
+.records-email-link:hover {
+    color: var(--accent);
+}
+
+/* ---------- Records Release ---------- */
+.records-release {
+    padding: 100px 0;
+    background: #FBBF24;
+    position: relative;
+    overflow: hidden;
+}
+
+.records-release__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.records-release__label {
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+}
+
+.records-release__info h2 {
+    margin-bottom: 24px;
+}
+
+.records-release__desc {
+    color: var(--bg-fatih);;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.records-release__artists {
+    margin-top: 28px;
+}
+
+.records-release__artists > span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+    font-family: var(--font-mono);
+}
+
+.records-release__artist-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.artist-tag {
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid rgba(252, 209, 22, 0.25);
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.artist-tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: var(--glow-accent);
+}
+
+.records-release__cover {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+}
+
+.records-release__cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out-expo);
+}
+
+.records-release__cover:hover img {
+    transform: scale(1.04);
+}
+
+.records-release__cover-glow {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(252, 209, 22, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ---------- Listen Section ---------- */
+.records-listen {
+    padding: 100px 0;
+    background: var(--accent-warm);
+    text-align: center;
+}
+
+.records-listen__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 0.95;
+    margin-bottom: 48px;
+    text-transform: uppercase;
+}
+
+.records-listen__platforms {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.platform-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(252, 209, 22, 0.15);
+    background: var(--bg-surface);
+    transition: all var(--transition-medium);
+    min-width: 140px;
+}
+
+.platform-card svg {
+    width: 40px;
+    height: 40px;
+    color: var(--text);
+    transition: color var(--transition-fast);
+}
+
+.platform-card span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.platform-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: var(--glow-accent);
+}
+
+.platform-card:hover svg {
+    color: var(--accent);
+}
+
+.platform-card:hover span {
+    color: var(--text);
+}
+
+/* ---------- YouTube Sets ---------- */
+.records-youtube {
+    padding: 100px 0;
+    background: var(--bg-surface);
+}
+
+.records-section-heading {
+    margin-bottom: 12px;
+}
+
+.records-section-sub {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+}
+
+.records-youtube__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.youtube-card {
+    cursor: pointer;
+    transition: transform var(--transition-medium);
+}
+
+.youtube-card:hover {
+    transform: translateY(-6px);
+}
+
+.youtube-card__thumb {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    margin-bottom: 16px;
+}
+
+.youtube-card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s var(--ease-out-expo);
+}
+
+.youtube-card:hover .youtube-card__thumb img {
+    transform: scale(1.06);
+}
+
+.youtube-card__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.youtube-card__play svg {
+    width: 24px;
+    height: 24px;
+    color: var(--text);
+    margin-left: 2px;
+}
+
+.youtube-card:hover .youtube-card__play {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: var(--glow-accent);
+}
+
+.youtube-card:hover .youtube-card__play svg {
+    color: var(--bg);
+}
+
+.youtube-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.youtube-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+}
+
+/* ---------- Spotify Embed Cards ---------- */
+.records-spotify {
+    padding: 100px 0;
+    background: var(--bg);
+}
+
+.spotify-embed-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.spotify-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.spotify-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+.spotify-wrap {
+  padding: 1rem;
+  border-radius: 16px;
+}
+
+
+
+/* Header: cover + meta */
+.spotify-card__header {
+    display: flex;
+    gap: 16px;
+    padding: 16px 16px 12px;
+}
+
+.spotify-card__cover {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.spotify-card__cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spotify-card__meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    position: relative;
+    flex: 1;
+}
+
+.spotify-card__logo {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.spotify-card__title {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+    text-transform: none;
+}
+
+.spotify-card__artist {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.spotify-card__save {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.spotify-card__save svg {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+
+/* Controls bar */
+.spotify-card__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px 12px;
+    gap: 12px;
+}
+
+.spotify-card__preview {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    color: var(--text);
+}
+
+.spotify-card__buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    justify-content: center;
+}
+
+.spotify-card__buttons svg {
+    width: 22px;
+    height: 22px;
+    color: var(--text);
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity var(--transition-fast);
+}
+
+.spotify-card__buttons svg:hover {
+    opacity: 1;
+}
+
+.spotify-card__play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.spotify-card__play-btn:hover {
+    transform: scale(1.08);
+}
+
+.spotify-card__play-btn svg {
+    width: 18px;
+    height: 18px;
+    color: var(--bg);
+    margin-left: 2px;
+}
+
+/* Track list */
+.spotify-card__tracklist {
+    padding: 0 16px 12px;
+}
+
+.spotify-track {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.spotify-track:last-child {
+    border-bottom: none;
+}
+
+.spotify-track__num {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.spotify-track__info {
+    flex: 1;
+    min-width: 0;
+}
+
+.spotify-track__name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.spotify-track__artist {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.spotify-track__dur {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+}
+
+/* ---------- Records Page Responsive ---------- */
+@media (max-width: 1024px) {
+    .spotify-embed-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 768px) {
+    .records-about__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .records-about__image {
+        aspect-ratio: 16/10;
+    }
+
+    .records-release__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .records-release__cover {
+        order: -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .records-youtube__grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .records-listen__platforms {
+        gap: 12px;
+    }
+
+    .platform-card {
+        padding: 24px 28px;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .records-hero__title {
+        font-size: clamp(2.5rem, 14vw, 4rem);
+    }
+
+    .records-listen__title {
+        font-size: clamp(2rem, 12vw, 3.5rem);
+    }
+
+    .records-spotify__grid,
+    .spotify-embed-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        gap: 16px;
+    }
+
+    .records-listen__platforms {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .platform-card {
+        width: 100%;
+        max-width: 280px;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px 24px;
+    }
+
+    .platform-card svg {
+        width: 28px;
+        height: 28px;
     }
 }
