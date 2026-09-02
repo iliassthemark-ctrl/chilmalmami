@@ -244,6 +244,7 @@ img {
     background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=800&fit=crop');
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .event-hero__overlay {
@@ -269,6 +270,20 @@ img {
     font-size: clamp(2.5rem, 8vw, 6rem);
     line-height: 0.9;
     margin-bottom: 1.5rem;
+    color: #ff2a2a;
+    -webkit-text-stroke: 1px var(--accent);
+    paint-order: stroke fill;
+    text-shadow:
+        0 0 2px var(--accent),
+        0 0 6px rgba(252, 209, 22, 0.85),
+        0 0 14px rgba(252, 209, 22, 0.5),
+        0 0 22px rgba(255, 42, 42, 0.45);
+    animation: event-hero-blink 1.6s ease-in-out infinite;
+}
+
+@keyframes event-hero-blink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.35; }
 }
 
 .event-hero__details {
@@ -496,7 +511,7 @@ img {
 .footer {
     padding: 80px 0 40px;
     border-top: var(--border-subtle);
-    background: var(--bg);
+    background: var(--accent-warm);
 }
 
 .footer-center {
@@ -595,9 +610,86 @@ img {
 /* EVENTONE PAGE SPECIFIC STYLES */
 /* ========================================== */
 
+/* ---------- Event About (eventone.html only) ---------- */
+.event-about-page {
+    background: var(--bg-kalwa);
+    padding: 5rem 0 3rem;
+}
+
+.event-about-page__inner {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.event-about-page__inner .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.event-about-page__title {
+    margin-bottom: 1.75rem;
+}
+
+.event-about-page__lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.event-about-page__body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.event-about-page__meta {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.event-about-page__meta li + li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.event-about-page__meta li + li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.event-about-page__meta-icon {
+    margin-right: 0.4rem;
+    font-size: 1rem;
+    line-height: 1;
+    display: inline-block;
+    transform: translateY(1px);
+}
+
 /* ---------- Event Details (eventone.html only) ---------- */
 .event-details-page {
-    background: var(--bg-kalwa);
+    background: var(--bg-fatih);
     padding: 4rem 0;
 }
 
@@ -612,10 +704,11 @@ img {
 /* ---------- Event Info & Lineup (eventone.html only) ---------- */
 .event-info-page,
 .event-lineup-page {
-    background: var(--bg-fatih);
-    border: var(--bg-fatih);
+    background: var(--bg-kalwa);
+    border: 1px solid rgba(252, 209, 22, 0.35);
     border-radius: 20px;
     padding: 2rem;
+    box-shadow: 0 0 0 1px rgba(252, 209, 22, 0.08), 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .event-info-page .event-panel-title,
@@ -726,9 +819,14 @@ img {
 
 /* ---------- Footer (eventone.html only) ---------- */
 .footer-page {
-    padding: 80px 0 40px;
+    padding: 80px 0 0;
     border-top: var(--border-subtle);
     background: var(--bg);
+}
+
+.footer-bottom-bar {
+    background: var(--bg);
+    padding: 32px 0;
 }
 
 .footer-page .footer-center {
@@ -749,9 +847,10 @@ img {
 }
 
 .footer-page .footer-tagline {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     margin-bottom: 32px;
+    font-weight: 500;
 }
 
 .footer-page .footer-social-label {
@@ -773,7 +872,7 @@ img {
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 107, 53, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.24);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -784,7 +883,7 @@ img {
 .footer-page .footer-socials a:hover {
     border-color: var(--accent);
     color: var(--accent);
-    box-shadow: var(--glow-accent);
+    background: rgba(252, 209, 22, 0.08);
     transform: translateY(-4px);
 }
 
@@ -797,8 +896,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 40px;
-    border-top: var(--border-subtle);
     flex-wrap: wrap;
     gap: 16px;
 }
@@ -1304,10 +1401,29 @@ img {
 .records-youtube {
     padding: 100px 0;
     background: var(--bg-surface);
+    text-align: center;
 }
 
 .records-section-heading {
     margin-bottom: 12px;
+}
+
+.records-youtube .records-section-heading,
+.records-spotify .records-section-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: #fbbf24;
+    margin: 0 auto 12px;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.records-youtube .records-section-heading .accent,
+.records-spotify .records-section-heading .accent {
+    color: #ffffff;
 }
 
 .records-section-sub {
@@ -1315,7 +1431,7 @@ img {
     font-size: 1rem;
     max-width: 600px;
     line-height: 1.7;
-    margin-bottom: 48px;
+    margin: 0 auto 48px;
 }
 
 .records-youtube__grid {
@@ -1403,6 +1519,7 @@ img {
 .records-spotify {
     padding: 100px 0;
     background: var(--bg);
+    text-align: center;
 }
 
 .spotify-embed-grid {

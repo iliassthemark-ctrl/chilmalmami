@@ -949,7 +949,7 @@ input {
 
 /* ---------- ABOUT SECTION ---------- */
 .about {
-    padding: var(--section-padding);
+    padding: 120px 0 40px;
     position: relative;
     margin-top: -180px;
 }
@@ -1025,6 +1025,45 @@ input {
     font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 16px;
+}
+
+.about-content .about-lead {
+    font-size: 1.2rem;
+    line-height: 1.55;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.about-content .about-stanza {
+    font-family: var(--font-display, var(--font-body));
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+    padding-left: 18px;
+    border-left: 2px solid var(--sunset-orange);
+    margin: 20px 0;
+}
+
+.about-content .about-callout {
+    margin-top: 28px;
+    padding: 20px 22px;
+    border-radius: 14px;
+    background: rgba(252, 209, 22, 0.06);
+    border: 1px solid rgba(252, 209, 22, 0.28);
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.about-content .about-highlight {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
 }
 
 .about-stats {
@@ -1157,7 +1196,7 @@ input {
 
 /* ---------- GALLERY ---------- */
 .gallery {
-    padding: var(--section-padding);
+    padding: 40px 0 120px;
     margin-top: -50px;
 }
 
@@ -1286,9 +1325,14 @@ input {
 
 /* ---------- FOOTER ---------- */
 .footer {
-    padding: 80px 0 40px;
+    padding: 80px 0 0;
     border-top: var(--border-subtle);
-    background: var(--bg-primary);
+    background: var(--dark-bg);
+}
+
+.footer-bottom-bar {
+    background: var(--dark-bg);
+    padding: 32px 0;
 }
 
 .footer-center {
@@ -1309,9 +1353,10 @@ input {
 }
 
 .footer-tagline {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     margin-bottom: 32px;
+    font-weight: 500;
 }
 
 .footer-social-label {
@@ -1333,7 +1378,7 @@ input {
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 107, 53, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.24);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1342,9 +1387,9 @@ input {
 }
 
 .footer-socials a:hover {
-    border-color: var(--neon-magenta);
-    color: var(--neon-magenta);
-    box-shadow: var(--glow-magenta);
+    border-color: var(--sunset-orange);
+    color: var(--sunset-orange);
+    background: rgba(252, 209, 22, 0.08);
     transform: translateY(-4px);
 }
 
@@ -1357,8 +1402,6 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 40px;
-    border-top: var(--border-subtle);
     flex-wrap: wrap;
     gap: 16px;
 }

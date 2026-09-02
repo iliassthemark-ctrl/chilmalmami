@@ -359,12 +359,54 @@ document.querySelectorAll('.hero-genres span').forEach(tag => {
     const countdownEl = document.getElementById('countdown');
     if (!countdownEl) return;
 
-    const targetDate = new Date(countdownEl.dataset.date).getTime();
-
     const daysEl = document.getElementById('countdown-days');
     const hoursEl = document.getElementById('countdown-hours');
     const minutesEl = document.getElementById('countdown-minutes');
     const secondsEl = document.getElementById('countdown-seconds');
+
+    // Default time of day for events when only a date is provided (22:00 local time)
+    const DEFAULT_HOUR = 22;
+
+    // Parse a "DD / MM / YYYY" (or "DD/MM/YYYY") string into a Date at DEFAULT_HOUR local time.
+    function parseCardDate(text) {
+        if (!text) return null;
+        const match = text.trim().match(/^(\d{1,2})\s*\/\s*(\d{1,2})\s*\/\s*(\d{4})$/);
+        if (!match) return null;
+        const day = Number(match[1]);
+        const month = Number(match[2]);
+        const year = Number(match[3]);
+        const d = new Date(year, month - 1, day, DEFAULT_HOUR, 0, 0);
+        return isNaN(d.getTime()) ? null : d;
+    }
+
+    // Find the nearest upcoming event date from the event cards on the page.
+    // Falls back to countdown's own data-date attribute if no future card date exists.
+    function resolveTargetDate() {
+        const now = Date.now();
+        const cardDates = Array.from(document.querySelectorAll('.event-card .event-card-date'))
+            .map(el => parseCardDate(el.textContent))
+            .filter(d => d && d.getTime() > now)
+            .sort((a, b) => a.getTime() - b.getTime());
+
+        if (cardDates.length > 0) return cardDates[0];
+
+        const fallback = new Date(countdownEl.dataset.date);
+        return isNaN(fallback.getTime()) ? null : fallback;
+    }
+
+    const targetDateObj = resolveTargetDate();
+    if (!targetDateObj) return;
+    const targetDate = targetDateObj.getTime();
+
+    // Sync the countdown element's data-date and the hero "Next Event · …" badge to the resolved date.
+    countdownEl.dataset.date = targetDateObj.toISOString();
+    const badgeEl = document.querySelector('.hero-badge');
+    if (badgeEl) {
+        const formatted = targetDateObj.toLocaleDateString('en-US', {
+            month: 'long', day: 'numeric', year: 'numeric'
+        });
+        badgeEl.textContent = `Next Event · ${formatted}`;
+    }
 
     function pad(n) {
         return String(n).padStart(2, '0');

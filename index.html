@@ -13,9 +13,9 @@
   <meta property="og:description"
     content="Germany's most exciting Afro House event brand. Unforgettable Afro House, Amapiano, Deep House, and Afro Tech parties." />
   <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="index.css" />
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+  <link rel="stylesheet" href="index.css?v=9" />
+  <link rel="icon" type="image/png" href="last.png" />
+  <link rel="apple-touch-icon" href="last.png" />
 </head>
 
 <body>
@@ -50,14 +50,13 @@
     <div class="hero-noise"></div>
 
     <div class="hero-content">
-      <div class="hero-badge">
-        
-        Next Event · March 14, 2026
+      <div class="hero-badge" id="heroBadge">
+        Next Event
       </div>
 
       <!-- Countdown Timer -->
       
-      <div class="countdown" id="countdown" data-date="2026-03-14T22:00:00">
+      <div class="countdown" id="countdown" data-date="2026-10-03T22:00:00">
         <div class="countdown-item">
           <span class="countdown-number" id="countdown-days">00</span>
           <span class="countdown-label">Days</span>
@@ -85,7 +84,7 @@
 
       <!-- Location Badge -->
       <p class="hero__location mono">
-        <span class="blink"></span> 6.5244° N, 3.3792° E — GARAGEN CLUB
+        <span class="blink"></span> 6.5244° N, 3.3792° E — OFF BAR
       </p>
       <!--
       <h1 class="hero-title">
@@ -174,20 +173,20 @@
 
       <div class="events-grid">
         <!-- Event Card 1 -->
-        <article class="event-card reveal" data-event-target="eventone.html" role="link" tabindex="0" aria-label="Open Afro Nights March event details">
+        <article class="event-card reveal" data-event-target="eventone.html" role="link" tabindex="0" aria-label="Open Afro Nights Oktober event details">
           <div class="event-card-image">
-            <img src="DSC09441.jpg"
-              alt="Afro Nights March" />
-            <div class="event-card-date">14 / 03 / 2026</div>
-            <div class="event-card-badge">Club 🔥</div>
+            <img src="nextchil.jpg"
+              alt="Afro Nights Oktober" />
+            <div class="event-card-date">03 / 10 / 2026</div>
+            <div class="event-card-badge">BAR/CLUB 🔥</div>
             <div class="event-card-overlay">
-              <h3>AFRO NIGHTS | March</h3>
+              <h3>AFRO NIGHTS | Oktober</h3>
               <div class="event-venue">
                 <svg viewBox="0 0 24 24">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                Bootshaus · Cologne
+                OFF BAR · Cologne
               </div>
             </div>
           </div>
@@ -201,13 +200,13 @@
         </article>
 
         <!-- Event Card 2 -->
-        <article class="event-card reveal reveal-delay-1">
+        <article class="event-card reveal reveal-delay-1" data-event-target="eventtwo.html" role="link" tabindex="0" aria-label="Open CHILLMALMAMI March event details">
           <div class="event-card-image">
-            <img src="DSC09329.jpg" alt="CHILLMALMAMI March" />
-            <div class="event-card-date">21 / 03 / 2026</div>
+            <img src="IMG_6452.PNG" alt="CHILLMALMAMI March" />
+            <div class="event-card-date">Comming Soon</div>
             <div class="event-card-badge">Bar ⚡</div>
             <div class="event-card-overlay">
-              <h3>CHILLMALMAMI | March</h3>
+              <h3>CHILLMALMAMI | November</h3>
               <div class="event-venue">
                 <svg viewBox="0 0 24 24">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -227,14 +226,13 @@
         </article>
 
         <!-- Event Card 3 -->
-        <article class="event-card reveal reveal-delay-2">
+        <article class="event-card reveal reveal-delay-2" data-event-target="eventthree.html" role="link" tabindex="0" aria-label="Open Sunset Groove Köln event details">
           <div class="event-card-image">
-            <img src="DSC09169.jpg"
-              alt="Sunset Groove Cologne" />
-            <div class="event-card-date">24 / 05 / 2026</div>
-            <div class="event-card-badge">Summer 🌅</div>
+            <img src="IMG_6453.PNG" alt="CHILLMALMAMI Dezember" />
+            <div class="event-card-date">Comming Soon</div>
+            <div class="event-card-badge">Winter ❄️</div>
             <div class="event-card-overlay">
-              <h3>SUNSET GROOVE | Köln</h3>
+              <h3>CHILLMALMAMI | Dezember</h3>
               <div class="event-venue">
                 <svg viewBox="0 0 24 24">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -268,34 +266,62 @@
         </div>
       <div class="about-grid">
         <div class="about-image reveal">
-          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=800&fit=crop&q=80"
+          <img src="IMG_5546.JPG.jpeg"
             alt="CHILLMALMAMI crowd dancing" />
           <div class="about-glow"></div>
         </div>
         <div class="about-content">
         
           
+          <p class="about-lead reveal reveal-delay-2">
+            A room full of rhythm, energy, and people who came for the same
+            reason: <span class="about-highlight">to feel good.</span>
+          </p>
+
           <p class="reveal reveal-delay-2">
-            Born from a love of deep grooves and African rhythms, <strong>CHILLMALMAMI</strong> has become one of the
-            most exciting Afro House event brands in Germany. What started as an underground movement has grown into a
-            full-blown cultural phenomenon.
+            We created a place where you don&rsquo;t have to play a role,
+            impress anyone, or be anything other than yourself.
           </p>
-          <p class="reveal reveal-delay-3">
-            Our mission is simple — bring people together through the power of Afro House music. From the hypnotic beats
-            of Amapiano to the spiritual depths of Tribal House, every night with CHILLMALMAMI is an experience you
-            won't forget.
+
+          <p class="about-stanza reveal reveal-delay-2">
+            Come with your friends.<br>
+            Come with someone you love.<br>
+            Or come alone and see who you meet along the way.
           </p>
+
+          <p class="reveal reveal-delay-2">
+            Dance in the middle of the crowd. Close your eyes. Lose yourself
+            in the music. Laugh too loud. Stay longer than you planned.
+          </p>
+
+          <p class="about-stanza reveal reveal-delay-2">
+            Maybe you flirt. Maybe you don&rsquo;t.<br>
+            Maybe you dance with someone.<br>
+            Maybe the only thing you fall in love with tonight is the music.
+          </p>
+
+          <p class="reveal reveal-delay-2">
+            No pressure. No expectations. Just good music, good energy, and
+            a space where everyone is welcome.
+          </p>
+
+          <p class="about-callout reveal reveal-delay-2">
+            Whatever the night brings, let it feel right.<br>
+            <span class="about-highlight">There&rsquo;s a place for you here.</span>
+          </p>
+          
           <div class="about-stats reveal reveal-delay-4">
             <div class="stat-item">
-              <div class="stat-number">10+</div>
+              <!---->
+              <div class="stat-number">1+</div>
               <div class="stat-label">Years</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">250+</div>
+              <div class="stat-number">2+</div>
               <div class="stat-label">Events</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">100K+</div>
+              <div class="stat-number">1.5K+</div>
               <div class="stat-label">Guests</div>
             </div>
           </div>
@@ -305,6 +331,7 @@
   </section>
 
   <!-- ========== RESPECT ========== -->
+   <!--
   <section class="respect" id="respect">
     <div class="container">
       
@@ -342,12 +369,12 @@
       <div class="gallery-carousel" id="galleryCarousel">
         <div class="gallery-track-wrapper">
           <div class="gallery-track" id="galleryTrack">
-            <div class="gallery-slide"><img src="DSC09441.jpg" alt="AFRO NIGHTS — Bootshaus Cologne" /></div>
-            <div class="gallery-slide"><img src="DSC09329.jpg" alt="CHILLMALMAMI Night" /></div>
-            <div class="gallery-slide"><img src="DSC09169.jpg" alt="SUNSET GROOVE" /></div>
-            <div class="gallery-slide"><img src="DSC09139.jpg" alt="Party Night" /></div>
-            <div class="gallery-slide"><img src="DSC09157.jpg" alt="Dance Floor" /></div>
-            <div class="gallery-slide"><img src="CCI.jpg" alt="CHILLMALMAMI Crowd" /></div>
+            <div class="gallery-slide"><img src="IMG_5586.JPG.jpeg" alt="CHILLMALMAMI Dezember" /></div>
+             <div class="gallery-slide"><img src="IMG_5589.JPG.jpeg" alt="CHILLMALMAMI Dezember" /></div>
+            <div class="gallery-slide"><img src="IMG_5588.JPG.jpeg" alt="CHILLMALMAMI Dezember" /></div>
+            <div class="gallery-slide"><img src="IMG_6350.JPG.jpeg" alt="CHILLMALMAMI Dezember" /></div>
+            <div class="gallery-slide"><img src="IMG_6351.JPG.jpeg" alt="CHILLMALMAMI Dezember" /></div>
+            <div class="gallery-slide"><img src="IMG_6354.JPG.jpeg" alt="CHILLMALMAMI Dezember" /></div>
           </div>
         </div>
         <button class="gallery-btn gallery-btn--prev" id="galleryPrev" aria-label="Previous photo">
@@ -384,7 +411,7 @@
     <div class="container">
 
       <div class="footer-center">
-        <a href="#" class="navbar-logo" aria-label="CHILLMALMAMI home">
+        <a href="index.html" class="navbar-logo" aria-label="CHILLMALMAMI home">
           <img src="last.png" alt="CHILLMALMAMI logo" />
         </a>
         <p class="footer-tagline">Germany's most exciting Afro House event brand.</p>
@@ -406,19 +433,25 @@
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 CHILLMALMAMI. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Impressum</a>
-        </div>
-      </div>
-
     </div>
 
+    <div class="footer-bottom-bar">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2026 CHILLMALMAMI. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="impressum.html">Impressum</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script src="app.js"></script>
+  </footer>
+
+
+  <script src="app.js?v=6"></script>
 </body>
 
 </html>
