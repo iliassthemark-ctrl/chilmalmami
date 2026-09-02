@@ -27,3 +27,6 @@ yarn-error.log*
 
 # Local-only backup of original hi-res images (not for git)
 _originals_backup/
+
+# Local-only docs (not for git)
+README.md
