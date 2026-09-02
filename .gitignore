@@ -24,3 +24,6 @@ ehthumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local-only backup of original hi-res images (not for git)
+_originals_backup/
