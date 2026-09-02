@@ -783,6 +783,16 @@ input {
     box-shadow: 0 20px 60px rgba(15, 23, 42, 0.6), 0 0 40px rgba(255, 107, 53, 0.15), 0 0 80px rgba(255, 60, 172, 0.1);
 }
 
+.event-card--disabled {
+    cursor: default;
+}
+
+.event-card--disabled:hover {
+    transform: none;
+    border-color: var(--border-subtle);
+    box-shadow: none;
+}
+
 .event-card-image {
     position: relative;
     aspect-ratio: 4 / 5;
